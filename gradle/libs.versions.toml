@@ -13,3 +13,5 @@ stylecheck = { group = "ca.stellardrift", name = "stylecheck", version.ref = "st
 
 paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
 paper-dev = { group = "io.papermc.paper", name = "dev-bundle", version.ref = "paper" }
+
+core = { group = "com.vanguardfactions", name = "core-api", version = "0.0.1"}
