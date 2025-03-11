@@ -1,0 +1,41 @@
+name: Template Customization
+on: [push]
+
+jobs:
+  customize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone
+        uses: actions/checkout@v4
+
+      - name: Get repo name
+        run: |
+          echo "REPO_NAME=${{ github.event.repository.name }}" >> $GITHUB_ENV
+          echo "REPO_NAME_LOWER=$(echo '${{ github.event.repository.name }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+
+      - name: Replace variables
+        run: |
+          find . -type f -exec sed -i "s/{{REPO_NAME}}/${REPO_NAME}/g" {} +
+          find . -type f -exec sed -i "s/reponamelower/${REPO_NAME_LOWER}/g" {} +
+
+      - name: Rename files `{{REPO_NAME}}`
+        run: |
+          find . -depth -name "*{{REPO_NAME}}*" | while read file; do
+            new_file=$(echo "$file" | sed "s/{{REPO_NAME}}/${REPO_NAME}/g")
+            mv "$file" "$new_file"
+          done
+          
+          find . -depth -name "*reponamelower*" | while read file; do
+            new_file=$(echo "$file" | sed "s/reponamelower/${REPO_NAME_LOWER}/g")
+            mv "$file" "$new_file"
+          done
+
+      - name: Delete this lol
+        run: rm -f .github/workflows/template.yml
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git commit -am "refactor: template variables"
+          git push

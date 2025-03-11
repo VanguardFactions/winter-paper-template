@@ -1,8 +1,8 @@
-package com.vanguardfactions.example;
+package com.vanguardfactions.reponamelower;
 
 import com.thewinterframework.paper.PaperWinterPlugin;
 import com.thewinterframework.plugin.WinterBootPlugin;
 
 @WinterBootPlugin
-public class Example extends PaperWinterPlugin {
+public class {{REPO_NAME}} extends PaperWinterPlugin {
 }

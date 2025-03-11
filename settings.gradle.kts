@@ -1,4 +1,4 @@
-rootProject.name = "template"
+rootProject.name = "{{REPO_NAME}}"
 
 pluginManagement {
   includeBuild("build-logic")

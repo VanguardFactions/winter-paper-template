@@ -17,11 +17,11 @@ repositories {
 }
 
 paperPluginYaml {
-  name = "ExamplePlugin"
-  main = "com.vanguardfactions.example.Example"
+  name = "{{REPO_NAME}}"
+  main = "com.vanguardfactions.{{REPO_NAME_LOWER}}.{{REPO_NAME}}"
   apiVersion = "1.21.4"
   authors.add("VanguardFactions")
-  description = "A plugin that adds spawners to the game."
+  description = "Example description."
   dependencies {
     server("VanguardCore", PaperPluginYaml.Load.BEFORE, true, joinClasspath = true)
   }
