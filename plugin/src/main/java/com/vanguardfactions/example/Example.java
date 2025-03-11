@@ -1,4 +1,4 @@
-package net.vanguard.example;
+package com.vanguardfactions.example;
 
 import com.thewinterframework.paper.PaperWinterPlugin;
 import com.thewinterframework.plugin.WinterBootPlugin;
