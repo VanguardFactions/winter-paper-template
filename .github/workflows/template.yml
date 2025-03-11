@@ -33,9 +33,15 @@ jobs:
       - name: Delete this lol
         run: rm -f .github/workflows/template.yml
 
+      - name: Reset git
+        run: |
+          rm -f .git/index
+          git reset
+
       - name: Commit changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git commit -am "refactor: template variables"
+          git add .
+          git commit -m "refactor: template variables"
           git push
