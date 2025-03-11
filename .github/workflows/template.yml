@@ -16,18 +16,18 @@ jobs:
 
       - name: Replace variables
         run: |
-          find . -type f -exec sed -i "s/reponame/${REPO_NAME}/g" {} +
           find . -type f -exec sed -i "s/reponamelower/${REPO_NAME_LOWER}/g" {} +
+          find . -type f -exec sed -i "s/reponame/${REPO_NAME}/g" {} +
 
       - name: Rename files `{{REPO_NAME}}`
         run: |
-          find . -depth -name "*reponame*" | while read file; do
-            new_file=$(echo "$file" | sed "s/reponame/${REPO_NAME}/g")
+          find . -depth -name "*reponamelower*" | while read file; do
+            new_file=$(echo "$file" | sed "s/reponamelower/${REPO_NAME_LOWER}/g")
             mv "$file" "$new_file"
           done
           
-          find . -depth -name "*reponamelower*" | while read file; do
-            new_file=$(echo "$file" | sed "s/reponamelower/${REPO_NAME_LOWER}/g")
+          find . -depth -name "*reponame*" | while read file; do
+            new_file=$(echo "$file" | sed "s/reponame/${REPO_NAME}/g")
             mv "$file" "$new_file"
           done
 
