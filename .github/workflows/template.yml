@@ -45,4 +45,4 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git add .
           git commit -m "refactor: template variables"
-          git push HEAD:main
+          git push
