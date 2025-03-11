@@ -3,6 +3,7 @@ on: [push]
 
 jobs:
   customize:
+    if: github.repository != 'VanguardFactions/winter-paper-template' # skip if the repo is the template
     runs-on: ubuntu-latest
     steps:
       - name: Clone
@@ -15,13 +16,13 @@ jobs:
 
       - name: Replace variables
         run: |
-          find . -type f -exec sed -i "s/{{REPO_NAME}}/${REPO_NAME}/g" {} +
+          find . -type f -exec sed -i "s/reponame/${REPO_NAME}/g" {} +
           find . -type f -exec sed -i "s/reponamelower/${REPO_NAME_LOWER}/g" {} +
 
       - name: Rename files `{{REPO_NAME}}`
         run: |
-          find . -depth -name "*{{REPO_NAME}}*" | while read file; do
-            new_file=$(echo "$file" | sed "s/{{REPO_NAME}}/${REPO_NAME}/g")
+          find . -depth -name "*reponame*" | while read file; do
+            new_file=$(echo "$file" | sed "s/reponame/${REPO_NAME}/g")
             mv "$file" "$new_file"
           done
           

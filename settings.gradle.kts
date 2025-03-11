@@ -1,4 +1,4 @@
-rootProject.name = "{{REPO_NAME}}"
+rootProject.name = "reponame"
 
 pluginManagement {
   includeBuild("build-logic")
