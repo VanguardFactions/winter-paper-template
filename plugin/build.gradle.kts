@@ -18,7 +18,7 @@ repositories {
 
 paperPluginYaml {
   name = "reponame"
-  main = "com.vanguardfactions.reponamelower.reponame"
+  main = "com.vanguardfactions.reponamelower.reponamePlugin"
   apiVersion = "1.21.4"
   authors.add("VanguardFactions")
   description = "Example description."
