@@ -6,7 +6,7 @@ plugins {
   id("vanguard.common-conventions")
   id("com.github.johnrengelman.shadow") version ("8.1.1")
   id("xyz.jpenilla.resource-factory-paper-convention") version ("1.2.0")
-  //id("io.papermc.paperweight.userdev") version ("1.7.1") // Uncomment this line if you want to use Paperweight
+  //id("io.papermc.paperweight.userdev") version "2.0.0-beta.16" // Uncomment this line if you want to use Paperweight
 }
 
 repositories {
@@ -28,7 +28,7 @@ paperPluginYaml {
 }
 
 dependencies {
-  //paperweight.paperDevBundle("1.21.3-R0.1-SNAPSHOT") // Uncomment this line if you want to use Paperweight
+  //paperweight.paperDevBundle("1.21.4-R0.1-SNAPSHOT") // Uncomment this line if you want to use Paperweight
   //compileOnly(fileTree(mapOf("dir" to "../libs", "include" to listOf("*.jar")))) // Uncomment this line if you want to use .jar libs
   compileOnlyApi(libs.paper)
   compileOnlyApi(libs.core)
