@@ -37,6 +37,14 @@ dependencies {
   annotationProcessor(libs.core)
 }
 
+publishing {
+  publications {
+    create<MavenPublication>("maven") {
+      from(components["java"])
+    }
+  }
+}
+
 tasks {
   shadowJar {
     val projectName = StringUtils.capitalise(project.name)
