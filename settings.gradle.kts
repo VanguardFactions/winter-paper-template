@@ -1,7 +1,23 @@
 rootProject.name = "reponame"
 
 pluginManagement {
-  includeBuild("build-logic")
+  repositories {
+    maven {
+      url = uri("https://repo.cosmicturnipvault.xyz/repository/maven-releases/")
+      credentials {
+        username = providers.gradleProperty("vanguard.nexus.username").orNull
+        password = providers.gradleProperty("vanguard.nexus.password").orNull
+      }
+    }
+    maven {
+      url = uri("https://repo.cosmicturnipvault.xyz/repository/maven-snapshots/")
+      credentials {
+        username = providers.gradleProperty("vanguard.nexus.username").orNull
+        password = providers.gradleProperty("vanguard.nexus.password").orNull
+      }
+    }
+    gradlePluginPortal()
+  }
 }
 
 sequenceOf("plugin").forEach {

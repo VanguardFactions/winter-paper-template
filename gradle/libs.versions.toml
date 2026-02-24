@@ -1,17 +1,5 @@
 [versions]
-indra = "3.1.3"
-spotless = "6.22.0"
-stylecheck = "0.2.1"
-checkstyle = "10.12.3"
-
 paper = "1.21.4-R0.1-SNAPSHOT"
 
 [libraries]
-build-indra = { group = "net.kyori", name = "indra-common", version.ref = "indra" }
-build-spotless = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" }
-stylecheck = { group = "ca.stellardrift", name = "stylecheck", version.ref = "stylecheck" }
-
-paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
-paper-dev = { group = "io.papermc.paper", name = "dev-bundle", version.ref = "paper" }
-
-core = { group = "com.vanguardfactions", name = "core-api", version = "0.0.1"}
+core = { group = "com.vanguard", name = "core-plugin", version = "1.0.0"}
