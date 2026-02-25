@@ -9,8 +9,8 @@ plugins {
 dependencies {
   //compileOnly(fileTree(mapOf("dir" to "../libs", "include" to listOf("*.jar")))) // Uncomment this line if you want to use .jar libs
   //compileOnly("com.vanguard:essentials-api:1.0.0") // Uncomment this line if you want to add essentials as dependency (change version)
-  //api(libs.core)
-//annotationProcessor(libs.core)
+  api(libs.core)
+  annotationProcessor(libs.core)
 }
 
 vanguard {
