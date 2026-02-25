@@ -1,9 +1,9 @@
 import xyz.jpenilla.resourcefactory.paper.PaperPluginYaml
-import xyz.jpenilla.resourcefactory.paper.paperPluginYaml
 
 plugins {
   id("com.vanguard.common-conventions") version ("1.0.0")
   //id("com.vanguard.publish-conventions") version ("1.0.0") // Uncomment this line if you want to publish this plugin to a maven repository
+  id("xyz.jpenilla.resource-factory-paper-convention") version ("1.3.1")
 }
 
 dependencies {
